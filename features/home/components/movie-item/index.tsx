@@ -3,14 +3,23 @@ import { Text } from "components/base/text";
 import { TProps } from "./type";
 import { RateStar } from "components/rate-star";
 import { styles } from "./style";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigation } from "types";
 
 export const MovieItem = (props: TProps) => {
     const { data, loading } = props
 
+    const { navigate } = useNavigation<StackNavigation>()
+
     return (
         <TouchableOpacity
             activeOpacity={0.8}
-            style={styles.container}
+            style={[styles.container, props.style]}
+            onPress={() => {
+                if(data){
+                    navigate('MovieDetail', data)
+                }
+            }}
         >
             <Image
                 source={{

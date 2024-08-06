@@ -1,9 +1,10 @@
-import { Text, View } from "react-native"
+import { Text } from "components/base/text"
+import { View } from "react-native"
 
 export const FavoriteWrapper = () => {
 
     return (
-        <View className="items-center justify-center">
+        <View>
             <Text>FAVORITE</Text>
         </View>
     )

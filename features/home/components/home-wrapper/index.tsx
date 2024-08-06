@@ -1,5 +1,4 @@
-import { FlatList, ListRenderItem, Text, View } from "react-native"
-import colors from 'tailwindcss/colors'
+import { FlatList, ListRenderItem } from "react-native"
 import { HeroSection } from 'features/home/components/hero-section'
 import { MovieItem } from 'features/home/components/movie-item'
 import { LayoutWrapper } from "layouts/default"

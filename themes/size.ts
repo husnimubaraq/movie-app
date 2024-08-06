@@ -11,10 +11,12 @@ export const rounded = {
     "3xl": 24,
     "4xl": 26,
     "5xl": 28,
+    "full": 9999
 }
 
 export const spacing = {
     "none": 0,
+    "xs": 2,
     "sm": 4,
     "md": 8,
     "lg": 12,
@@ -23,6 +25,8 @@ export const spacing = {
     "3xl": 24,
     "4xl": 28,
     "5xl": 32,
+    "6xl": 36,
+    "7xl": 40,
 }
 
 export const fontSize: ObjectIndex<TFontVariant, TextStyle> = {

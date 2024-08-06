@@ -2,7 +2,6 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Navigation } from "layouts/default/components/navigation";
 import { QueryClient, QueryClientProvider, QueryCache } from '@tanstack/react-query';
-import { View } from 'react-native';
 
 export const AppWrapper = () => {
 

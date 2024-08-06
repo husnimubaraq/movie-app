@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { BottomStackParamList, MainStackParamList } from 'types/navigator';
 import { HomeWrapper } from 'features/home';
+import { MovieDetailWrapper } from 'features/movie-detail';
 import { ExploreWrapper } from 'features/explore';
 import { ExploreIcon, ExploreOutlineIcon, FavoriteIcon, FavoriteOutlineIcon, HomeIcon, HomeOutlineIcon } from 'components/icons';
 import { FavoriteWrapper } from 'features/favorite';
@@ -59,6 +60,7 @@ export const Navigation = () => {
             >
                 <Group>
                     <Screen name='BottomNavigator' options={{ headerShown: false }} component={BottomNavigator} />
+                    <Screen name='MovieDetail' options={{ headerShown: false }} component={MovieDetailWrapper} />
                 </Group>
             </Navigator>
         </NavigationContainer>

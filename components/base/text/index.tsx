@@ -1,7 +1,7 @@
 import { Text as CustomText } from 'react-native'
 import { TProps } from './type'
 import { fontVariants } from './data'
-import { styles } from './styles'
+import { styles } from './style'
 
 export const Text = (props: TProps) => {
     const { children, variant = 'normal' } = props
@@ -11,7 +11,8 @@ export const Text = (props: TProps) => {
             {...props}
             style={[
                 styles.text,
-                fontVariants[variant]
+                fontVariants[variant],
+                props.style
             ]}
         >
             {children}

@@ -13,8 +13,9 @@ export const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: 150,
-        borderRadius: rounded.xl
+        height: 200,
+        borderTopRightRadius: rounded.xl,
+        borderTopLeftRadius: rounded.xl
     },
     title: {
         ...fontSize.sm

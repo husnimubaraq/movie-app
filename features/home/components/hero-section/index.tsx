@@ -1,28 +1,29 @@
-import { Text } from "components/base"
+import { Text } from "components/base/text"
 import { LogoIcon, SearchIcon } from "components/icons"
 import { TouchableOpacity, View } from "react-native"
 import colors from 'tailwindcss/colors'
+import { styles } from "./style"
 
 export const HeroSection = () => {
 
     return (
         <>
-            <View className="flex-row items-center justify-between mb-5">
-                <View className="flex-row items-center gap-x-3">
+            <View style={styles.container}>
+                <View style={styles.wrapper}>
                     <LogoIcon size={50} />
                     <View>
-                        <Text className="">Welcome back to</Text>
-                        <Text className="font-bold text-xl">Movie</Text>
+                        <Text>Welcome back to</Text>
+                        <Text variant="bold" style={styles.title}>Movie</Text>
                     </View>
                 </View>
                 <TouchableOpacity
                     activeOpacity={0.8}
-                    className="bg-slate-100 w-10 h-10 rounded-md items-center justify-center"
+                    style={styles.button}
                 >
                     <SearchIcon size={15} color={colors.neutral[400]} />
                 </TouchableOpacity>
             </View>
-            <Text className="text-xl font-medium mb-2">Populars</Text>
+            <Text variant="medium" style={styles.subtitle}>Populars</Text>
         </>
     )
 }

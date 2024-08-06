@@ -1,0 +1,6 @@
+export * from './movie-detail-wrapper'
+export * from './header'
+export * from './hero-section'
+export * from './movie-cast'
+export * from './movie-cast-item'
+export * from './movie-recommendation'

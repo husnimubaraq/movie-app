@@ -1,4 +1,5 @@
 import { NavigationProp } from "@react-navigation/native"
+import { TMovie } from "features/home"
 
 export type BottomStackParamList = {
     Home: undefined
@@ -10,7 +11,7 @@ export type BottomNavigation = NavigationProp<BottomStackParamList>;
 
 export type MainStackParamList = {
     BottomNavigator: undefined
-    MovieDetail: undefined
+    MovieDetail: TMovie
 }
 
 export type StackNavigation = NavigationProp<MainStackParamList>;
