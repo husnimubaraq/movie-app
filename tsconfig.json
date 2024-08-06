@@ -1,3 +1,18 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "apis/*": ["./apis/*"],
+      "components/*": ["./components/*"],
+      "features/*": ["./features/*"],
+      "hooks/*": ["./hooks/*"],
+      "layouts/*": ["./layouts/*"],
+      "types/*": ["./types/*"],
+      "utils/*": ["./utils/*"]
+    },
+    "baseUrl": "."
+  }
 }
