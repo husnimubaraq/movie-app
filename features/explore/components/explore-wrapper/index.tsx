@@ -6,7 +6,6 @@ import { useGetMovieTrendingFormatted, useGetSearchMovieFormatted } from "featur
 import { TMovie, MovieItem } from "features/home"
 import { styles } from "./style"
 import { useDebounce } from "hooks/use-debounce"
-import { MotiView } from "moti"
 import { colors } from "themes"
 import { Empty } from "components/empty"
 
@@ -31,7 +30,9 @@ export const ExploreWrapper = () => {
         query: queryDebounce
     })
 
-    const isEmpty = dataSearch.length === 0
+    const isEmptySearch = dataSearch.length === 0 && queryDebounce.length > 0
+    const isEmptyTrending = dataTrending.length === 0
+    const isEmpty = isEmptyTrending || isEmptySearch
 
     const loadNext = () => {
         if (hasNextPageTrending) {
@@ -64,31 +65,25 @@ export const ExploreWrapper = () => {
     return (
         <LayoutWrapper>
             {(isLoadingTrending || isLoadingSearch) ? (
-                <MotiView
-                    transition={{
-                        type: 'timing',
-                    }}
-                >
-                    <FlatList
-                        key={"#"}
-                        data={Array.from(new Array(10))}
-                        keyExtractor={(_, i) => i.toString()}
-                        renderItem={() => (
-                            <MovieItem
-                                loading
-                            />
-                        )}
-                        numColumns={2}
-                        contentContainerStyle={styles.contentContainer}
-                        columnWrapperStyle={styles.columnWrapper}
-                        ListHeaderComponent={
-                            <HeroSection
-                                query={query}
-                                setQuery={setQuery}
-                            />
-                        }
-                    />
-                </MotiView>
+                <FlatList
+                    key={"#"}
+                    data={Array.from(new Array(10))}
+                    keyExtractor={(_, i) => i.toString()}
+                    renderItem={() => (
+                        <MovieItem
+                            loading
+                        />
+                    )}
+                    numColumns={2}
+                    contentContainerStyle={styles.contentContainer}
+                    columnWrapperStyle={styles.columnWrapper}
+                    ListHeaderComponent={
+                        <HeroSection
+                            query={query}
+                            setQuery={setQuery}
+                        />
+                    }
+                />
             ) : (
                 <FlatList
                     key={"_"}
@@ -106,7 +101,7 @@ export const ExploreWrapper = () => {
                     }
                     ListEmptyComponent={
                         <Empty
-                            message="Movie search results were not found"
+                            message={`Movie search results \nwere not found`}
                         />
                     }
                     onEndReachedThreshold={400}

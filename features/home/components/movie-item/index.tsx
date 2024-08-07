@@ -5,8 +5,6 @@ import { RateStar } from "components/rate-star";
 import { styles } from "./style";
 import { StackActions, useNavigation } from "@react-navigation/native";
 import { StackNavigation } from "types";
-import { Skeleton } from "moti/skeleton";
-import { colors, rounded } from "themes";
 
 export const MovieItem = (props: TProps) => {
     const { data, withRate = true, loading } = props
@@ -18,7 +16,7 @@ export const MovieItem = (props: TProps) => {
             <View
                 style={[styles.container, props.style]}
             >
-                <Skeleton colorMode='light' radius={rounded.xl} height={250} width="100%" />
+                <View style={styles.loading} />
             </View>
         )
     }

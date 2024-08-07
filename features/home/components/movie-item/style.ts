@@ -19,5 +19,8 @@ export const styles = StyleSheet.create({
     },
     title: {
         ...fontSize.sm
+    },
+    loading: {
+        height: 200
     }
 })

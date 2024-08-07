@@ -2,7 +2,7 @@ import { TouchableOpacity } from "react-native"
 import { TProps } from "./type"
 import { Text } from "components/base/text"
 import { styles } from "./style"
-import { containerVariants } from "./data"
+import { containerVariants, titleVariants } from "./data"
 
 export const Button = (props: TProps) => {
     const {
@@ -28,7 +28,7 @@ export const Button = (props: TProps) => {
             {children ? children : (
                 <>
                     {leftNode && leftNode}
-                    <Text variant={textVariant} style={[styles.title, textStyle]}>{title}</Text>
+                    <Text variant={textVariant} style={[styles.title, titleVariants[variant], textStyle]}>{title}</Text>
                     {rightNode && rightNode}
                 </>
             )}

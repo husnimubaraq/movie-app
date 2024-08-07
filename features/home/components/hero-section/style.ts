@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
         ...fontSize.xl
     },
     subtitle: {
-        ...fontSize.lg,
+        ...fontSize.xl,
         marginBottom: spacing.md,
     }
 })

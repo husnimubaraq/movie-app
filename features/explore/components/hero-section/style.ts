@@ -3,7 +3,7 @@ import { colors, fontSize, rounded, spacing } from "themes";
 
 export const styles = StyleSheet.create({
     container: {
-        paddingVertical: spacing.xl,
+        paddingBottom: spacing.xl,
         gap: spacing.lg
     },
     title: {

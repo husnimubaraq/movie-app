@@ -27,7 +27,6 @@ module.exports = {
           layouts: './layouts',
           types: './types',
           utils: './utils',
-          'moti/skeleton': 'moti/skeleton/react-native-linear-gradient',
         },
       },
     ],

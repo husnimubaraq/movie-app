@@ -7,11 +7,13 @@ import { useGetMoviePopularFormatted } from "features/home/hooks"
 import { TMovie } from "features/home/types"
 import { styles } from "./style"
 import { colors } from "themes"
-import { MotiView } from "moti"
+import { Empty } from "components/empty"
 
 export const HomeWrapper = () => {
 
     const { data, hasNextPage, fetchNextPage, isLoading } = useGetMoviePopularFormatted()
+
+    const isEmpty = data.length === 0
 
     const loadNext = () => {
         if (hasNextPage) {
@@ -19,9 +21,10 @@ export const HomeWrapper = () => {
         }
     };
 
-    const renderItem = useCallback<ListRenderItem<TMovie>>(({ item }) => {
+    const renderItem = useCallback<ListRenderItem<TMovie>>(({ item, index }) => {
         return (
             <MovieItem
+                index={index}
                 data={item}
             />
         )
@@ -40,26 +43,20 @@ export const HomeWrapper = () => {
     return (
         <LayoutWrapper>
             {isLoading ? (
-                <MotiView
-                    transition={{
-                        type: 'timing',
-                    }}
-                >
-                    <FlatList
-                        key={"#"}
-                        data={Array.from(new Array(10))}
-                        keyExtractor={(_, i) => i.toString()}
-                        renderItem={() => (
-                            <MovieItem
-                                loading
-                            />
-                        )}
-                        numColumns={2}
-                        contentContainerStyle={styles.contentContainer}
-                        columnWrapperStyle={styles.columnWrapper}
-                        ListHeaderComponent={<HeroSection />}
-                    />
-                </MotiView>
+                <FlatList
+                    key={"#"}
+                    data={Array.from(new Array(10))}
+                    keyExtractor={(_, i) => i.toString()}
+                    renderItem={() => (
+                        <MovieItem
+                            loading
+                        />
+                    )}
+                    numColumns={2}
+                    contentContainerStyle={styles.contentContainer}
+                    columnWrapperStyle={styles.columnWrapper}
+                    ListHeaderComponent={<HeroSection />}
+                />
             ) : (
                 <FlatList
                     key={"_"}
@@ -67,9 +64,14 @@ export const HomeWrapper = () => {
                     keyExtractor={(_, i) => i.toString()}
                     renderItem={renderItem}
                     numColumns={2}
-                    contentContainerStyle={styles.contentContainer}
+                    contentContainerStyle={[styles.contentContainer, isEmpty && styles.emptyContainer]}
                     columnWrapperStyle={styles.columnWrapper}
                     ListHeaderComponent={<HeroSection />}
+                    ListEmptyComponent={
+                        <Empty
+                            message={`Movie not found`}
+                        />
+                    }
                     onEndReachedThreshold={400}
                     onEndReached={loadNext}
                     removeClippedSubviews

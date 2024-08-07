@@ -5,11 +5,13 @@ import { Button } from "components/base"
 import { ChevronLeftIcon, FavoriteIcon, FavoriteOutlineIcon } from "components/icons"
 import { colors } from "themes"
 import { useFavoriteContext } from "contexts"
-import { useRoute, RouteProp } from "@react-navigation/native"
+import { useRoute, RouteProp, useNavigation } from "@react-navigation/native"
 import { MainStackParamList } from "types/index"
 
 export const Header = () => {
     const { params } = useRoute<RouteProp<MainStackParamList, 'MovieDetail'>>()
+
+    const { goBack } = useNavigation()
 
     const { addToFavorite, favorites } = useFavoriteContext()
 
@@ -27,6 +29,7 @@ export const Header = () => {
                 <Button
                     variant="primary"
                     style={styles.button}
+                    onPress={() => goBack()}
                 >
                     <ChevronLeftIcon size={20} color={colors.black} />
                 </Button>

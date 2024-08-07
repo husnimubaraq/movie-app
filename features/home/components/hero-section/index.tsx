@@ -27,7 +27,7 @@ export const HeroSection = () => {
                     <SearchIcon size={15} color={colors.neutral[400]} />
                 </Button>
             </View>
-            <Text variant="medium" style={styles.subtitle}>Populars</Text>
+            <Text variant="bold" style={styles.subtitle}>Populars</Text>
         </>
     )
 }

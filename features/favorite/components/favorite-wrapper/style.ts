@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         gap: spacing.md
     },
     header: {
-        paddingVertical: spacing.xl,
+        paddingBottom: spacing.xl,
     },
     title: {
         ...fontSize.xl

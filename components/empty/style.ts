@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     },
     message: {
         ...fontSize.lg,
-        color: colors.neutral[500]
+        color: colors.neutral[500],
+        textAlign: 'center'
     }
 })
