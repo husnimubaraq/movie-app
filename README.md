@@ -8,7 +8,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ```bash
 TMDB_API_URL="https://api.themoviedb.org/3/"
-TMDB_API_KEY="fb7bb23f03b6994dafc674c074d01761"
+TMDB_API_KEY=""
 TMDB_IMAGE_URL="https://image.tmdb.org/t/p/w500"
 ```
 
