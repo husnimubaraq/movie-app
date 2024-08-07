@@ -4,6 +4,9 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
+# Demo
+[![Video Title](https://res.cloudinary.com/dgykrwu36/video/upload/v1723021539/du6lkx1iz3eyhqwyxhcl.mp4)
+
 ## Step 1: Environment Configuration
 
 ```bash
