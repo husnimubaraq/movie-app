@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { TextStyle, ViewProps } from "react-native";
+import { TextStyle, TouchableOpacityProps, ViewProps } from "react-native";
 
 export type TProps = {
     title?: string
@@ -8,4 +8,4 @@ export type TProps = {
     variant?: "default" | "primary"
     textVariant?: 'normal' | 'medium' | 'semibold' | 'bold'
     textStyle?: TextStyle
-} & PropsWithChildren & ViewProps
+} & PropsWithChildren & TouchableOpacityProps

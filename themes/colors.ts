@@ -3,6 +3,7 @@ export const colors = {
     primary: '#78A3D4',
     black: '#1B1826',
     white: '#FFFFFF',
+    yellow: '#ebc634',
     slate: {
         100: '#f1f5f9',
         200: '#e2e8f0',

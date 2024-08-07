@@ -23,6 +23,7 @@ export const Button = (props: TProps) => {
                 containerVariants[variant],
                 props.style
             ]}
+            onPress={props.onPress}
         >
             {children ? children : (
                 <>

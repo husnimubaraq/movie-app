@@ -19,13 +19,5 @@ export const styles = StyleSheet.create({
     subtitle: {
         ...fontSize.lg,
         marginBottom: spacing.md,
-    },
-    button: {
-        backgroundColor: colors.slate[100],
-        height: spacing["5xl"],
-        width: spacing["5xl"],
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: rounded.md
     }
 })

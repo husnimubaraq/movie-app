@@ -1,10 +1,15 @@
 import { Text } from "components/base/text"
 import { LogoIcon, SearchIcon } from "components/icons"
-import { TouchableOpacity, View } from "react-native"
-import colors from 'tailwindcss/colors'
+import { View } from "react-native"
+import { colors } from 'themes'
 import { styles } from "./style"
+import { useNavigation } from "@react-navigation/native"
+import { BottomNavigation } from "types/index"
+import { Button } from "components/base"
 
 export const HeroSection = () => {
+
+    const { navigate } = useNavigation<BottomNavigation>()
 
     return (
         <>
@@ -16,12 +21,11 @@ export const HeroSection = () => {
                         <Text variant="bold" style={styles.title}>Movie</Text>
                     </View>
                 </View>
-                <TouchableOpacity
-                    activeOpacity={0.8}
-                    style={styles.button}
+                <Button
+                    onPress={() => navigate('Explore')}
                 >
                     <SearchIcon size={15} color={colors.neutral[400]} />
-                </TouchableOpacity>
+                </Button>
             </View>
             <Text variant="medium" style={styles.subtitle}>Populars</Text>
         </>

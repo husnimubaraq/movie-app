@@ -2,6 +2,7 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Navigation } from "layouts/default/components/navigation";
 import { QueryClient, QueryClientProvider, QueryCache } from '@tanstack/react-query';
+import { FavoriteProvider } from 'contexts';
 
 export const AppWrapper = () => {
 
@@ -16,7 +17,9 @@ export const AppWrapper = () => {
     return (
         <QueryClientProvider client={queryClient}>
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <Navigation />
+                <FavoriteProvider>
+                    <Navigation />
+                </FavoriteProvider>
             </GestureHandlerRootView>
         </QueryClientProvider>
     )

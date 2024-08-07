@@ -6,6 +6,9 @@ export const styles = StyleSheet.create({
         padding: spacing.xl,
         gap: spacing.md
     },
+    emptyContainer: {
+        flex: 1
+    },
     columnWrapper: {
         gap: spacing.md
     },

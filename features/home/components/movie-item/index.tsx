@@ -5,11 +5,23 @@ import { RateStar } from "components/rate-star";
 import { styles } from "./style";
 import { StackActions, useNavigation } from "@react-navigation/native";
 import { StackNavigation } from "types";
+import { Skeleton } from "moti/skeleton";
+import { colors, rounded } from "themes";
 
 export const MovieItem = (props: TProps) => {
-    const { data, loading } = props
+    const { data, withRate = true, loading } = props
 
     const { dispatch } = useNavigation<StackNavigation>()
+
+    if(loading){
+        return (
+            <View
+                style={[styles.container, props.style]}
+            >
+                <Skeleton colorMode='light' radius={rounded.xl} height={250} width="100%" />
+            </View>
+        )
+    }
 
     return (
         <TouchableOpacity
@@ -31,7 +43,9 @@ export const MovieItem = (props: TProps) => {
             />
             <View style={styles.wrapper}>
                 <Text variant="bold" style={styles.title} numberOfLines={1}>{data?.original_title}</Text>
-                <RateStar rate={data?.vote_average ?? 0} />
+                {withRate && (
+                    <RateStar rate={data?.vote_average ?? 0} />
+                )}
             </View>
         </TouchableOpacity>
     )

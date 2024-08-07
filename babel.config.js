@@ -1,7 +1,6 @@
 module.exports = {
   presets: [
-    ['module:@react-native/babel-preset', {jsxImportSource: 'nativewind'}],
-    'nativewind/babel',
+    ['module:@react-native/babel-preset']
   ],
   plugins: [
     'babel-plugin-transform-typescript-metadata',
@@ -28,6 +27,7 @@ module.exports = {
           layouts: './layouts',
           types: './types',
           utils: './utils',
+          'moti/skeleton': 'moti/skeleton/react-native-linear-gradient',
         },
       },
     ],

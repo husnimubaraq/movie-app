@@ -2,12 +2,20 @@ import { View } from "react-native"
 import { styles } from "./style"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Button } from "components/base"
-import { ChevronLeftIcon, FavoriteOutlineIcon } from "components/icons"
+import { ChevronLeftIcon, FavoriteIcon, FavoriteOutlineIcon } from "components/icons"
 import { colors } from "themes"
+import { useFavoriteContext } from "contexts"
+import { useRoute, RouteProp } from "@react-navigation/native"
+import { MainStackParamList } from "types/index"
 
 export const Header = () => {
+    const { params } = useRoute<RouteProp<MainStackParamList, 'MovieDetail'>>()
+
+    const { addToFavorite, favorites } = useFavoriteContext()
 
     const containerInsets = useSafeAreaInsets()
+
+    const favoriteActive = favorites.some(x => x.id === params.id)
 
     return (
         <View 
@@ -26,8 +34,13 @@ export const Header = () => {
                 <Button
                     variant="primary"
                     style={styles.button}
+                    onPress={() => addToFavorite(params)}
                 >
-                    <FavoriteOutlineIcon size={20} color={colors.black} />
+                    {favoriteActive ? (
+                        <FavoriteIcon size={20} color={colors.black} />
+                    ) : (
+                        <FavoriteOutlineIcon size={20} color={colors.black} />
+                    )}
                 </Button>
             </View>
         </View>
