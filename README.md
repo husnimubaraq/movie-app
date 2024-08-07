@@ -6,6 +6,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Demo
 ![](https://github.com/husnimubaraq/movie-app/blob/master/demo.gif)
+[![Video Title](https://res.cloudinary.com/dgykrwu36/video/upload/v1723021539/du6lkx1iz3eyhqwyxhcl.mp4)
 
 ## Step 1: Environment Configuration
 
