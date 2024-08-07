@@ -9,6 +9,7 @@ import { MovieCast } from "features/movie-detail/components/movie-cast"
 import { MovieRecommendation } from "features/movie-detail/components/movie-recommendation"
 import { useGetMovieDetail } from "features/movie-detail/hooks"
 import { Text } from "components/base"
+import { spacing } from "themes"
 
 export const MovieDetailWrapper = () => {
     const { params } = useRoute<RouteProp<MainStackParamList, 'MovieDetail'>>()
@@ -23,9 +24,9 @@ export const MovieDetailWrapper = () => {
             <ScrollView>
                 <HeroSection data={data} />
                 <View style={styles.container}>
-                    <View style={styles.section}>
+                    <View style={[styles.section]}>
                         <Text variant="medium" style={styles.label}>Story line</Text>
-                        <Text style={styles.description}>{data?.overview}</Text>
+                        <Text style={[styles.description, { paddingHorizontal: spacing.xl }]}>{data?.overview}</Text>
                     </View>
                     <View style={styles.section}>
                         <Text variant="medium" style={styles.label}>Star Cast</Text>

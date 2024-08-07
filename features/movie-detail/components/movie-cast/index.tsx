@@ -12,8 +12,6 @@ export const MovieCast = () => {
 
     const data = useGetMovieCastFormatted(params.id)
 
-    console.log('test: ', data)
-
     const renderItem = useCallback<ListRenderItem<TMovieCast>>(({ item }) => {
         return (
             <MovieCastItem

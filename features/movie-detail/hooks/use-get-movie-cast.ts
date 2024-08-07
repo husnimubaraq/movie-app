@@ -13,8 +13,6 @@ export const useGetMovieCast = (id: number) => {
 export const useGetMovieCastFormatted = (id: number) => {
     const { data } = useGetMovieCast(id)
 
-    console.log('data: ', data)
-
     let formatted = data?.cast
 
     let dataFiltterred = formatted?.filter(x => x.known_for_department === "Acting")

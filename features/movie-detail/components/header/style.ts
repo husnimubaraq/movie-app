@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { spacing } from "themes";
+import { colors, spacing } from "themes";
 
 export const styles = StyleSheet.create({
     headerContainer: {
@@ -15,4 +15,8 @@ export const styles = StyleSheet.create({
         paddingHorizontal: spacing.xl,
         paddingVertical: spacing.lg,
     },
+    button: {
+        backgroundColor: colors.slate[100],
+        opacity: 0.5
+    }
 })

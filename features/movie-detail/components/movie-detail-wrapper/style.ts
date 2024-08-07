@@ -7,10 +7,10 @@ export const styles = StyleSheet.create({
     },
     section: {
         gap: spacing.lg,
-        paddingHorizontal: spacing.xl,
     },
     label: {
-        ...fontSize.lg
+        ...fontSize.lg,
+        paddingHorizontal: spacing.xl
     },
     description: {
         color: colors.neutral[500],

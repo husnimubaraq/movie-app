@@ -7,6 +7,7 @@ import LinearGradient from "react-native-linear-gradient"
 import { Text } from "components/base"
 import { RateStar } from "components/rate-star"
 import { TProps } from "./type"
+import { formatRuntime } from "utils/dayjs"
 
 export const HeroSection = (props: TProps) => {
     const { data } = props
@@ -27,7 +28,7 @@ export const HeroSection = (props: TProps) => {
                             <View style={styles.infoCategory}>
                                 <Text style={styles.infoLabel}>{data?.genres.map((x) => x.name).join(', ')}</Text>
                             </View>
-                            <Text style={styles.infoLabel}>2h 1m</Text>
+                            <Text style={styles.infoLabel}>{formatRuntime(data?.runtime ?? 0)}</Text>
                         </View>
                     </View>
                 </LinearGradient>

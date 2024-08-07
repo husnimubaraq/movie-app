@@ -2,7 +2,7 @@ import { View } from "react-native"
 import { styles } from "./style"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Button } from "components/base"
-import { ChevronLeftIcon, FavoriteIcon } from "components/icons"
+import { ChevronLeftIcon, FavoriteOutlineIcon } from "components/icons"
 import { colors } from "themes"
 
 export const Header = () => {
@@ -18,14 +18,16 @@ export const Header = () => {
             <View style={styles.header}>
                 <Button
                     variant="primary"
+                    style={styles.button}
                 >
-                    <ChevronLeftIcon size={20} color={colors.white} />
+                    <ChevronLeftIcon size={20} color={colors.black} />
                 </Button>
 
                 <Button
                     variant="primary"
+                    style={styles.button}
                 >
-                    <FavoriteIcon size={20} color={colors.white} />
+                    <FavoriteOutlineIcon size={20} color={colors.black} />
                 </Button>
             </View>
         </View>

@@ -8,6 +8,7 @@ import { ExploreWrapper } from 'features/explore';
 import { ExploreIcon, ExploreOutlineIcon, FavoriteIcon, FavoriteOutlineIcon, HomeIcon, HomeOutlineIcon } from 'components/icons';
 import { FavoriteWrapper } from 'features/favorite';
 import { colors } from 'themes';
+import { styles } from './style';
 
 const BottomStack = createBottomTabNavigator<BottomStackParamList>();
 
@@ -18,9 +19,9 @@ const BottomNavigator = () => {
         <Navigator
             initialRouteName='Home'
             screenOptions={{
-                tabBarShowLabel: false,
                 headerShown: false,
-                tabBarActiveTintColor: colors.primary
+                tabBarActiveTintColor: colors.primary,
+                tabBarLabelStyle: styles.label,
             }}
         >
             <Screen 
